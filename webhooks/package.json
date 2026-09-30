@@ -1,0 +1,13 @@
+{
+  "name": "datamatrixsocial-webhooks",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Instagram Webhooks callback endpoint for Datamatrix",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4"
+  }
+}

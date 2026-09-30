@@ -1,0 +1,14 @@
+# dependencies
+node_modules/
+
+# env with real values (examples stay committed)
+.env
+.env.local
+webhooks/.env.local
+
+# logs + OS
+*.log
+.DS_Store
+Thumbs.db
+
+# compress assets/hero-neon.png to WebP before deploy (currently ~2.2 MB)
