@@ -14,15 +14,17 @@ step — open `index.html` or serve the folder with any static host.
   see `docs/meta-ads-runbook.md`
 - `.vscode/mcp.json` — Meta Social Technologies MCP wiring (OAuth, no secrets);
   see `docs/meta-mcp-setup.md`
-- `assets/hero-neon.png` — neon brand board art (hero background)
+- `assets/hero-banner.webp` — hero background (banner crop of the neon
+  board, ~90 KB), with `assets/hero-banner.png` as the fallback
+- `assets/hero-neon.png` — full neon brand board (source, not served)
 - `docs/system-design.md` — architecture, link inventory, hosting, future
 
 ## Brand source
 
 `iCloudDrive/Datamatrix social brand kit` (logo sheets, neon board,
 Instagram ad creative, Hawk Eye Trade + Sentinel reference work).
-`assets/hero-neon.png` is a copy of the neon board — compress to WebP
-before deploying (currently ~2.2 MB).
+`assets/hero-neon.png` is a copy of the neon board. The hero uses the
+banner strip cropped from it (`hero-banner.webp` / `.png`).
 
 ## Links
 

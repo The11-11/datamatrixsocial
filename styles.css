@@ -39,9 +39,16 @@ h2,
   position: relative;
   padding: 4.5rem 1.5rem 3.5rem;
   text-align: center;
+  /* PNG first as the fallback; browsers with image-set() pick the WebP */
   background-image:
     linear-gradient(rgba(6, 11, 26, 0.55), var(--navy) 92%),
-    url("assets/hero-neon.png");
+    url("assets/hero-banner.png");
+  background-image:
+    linear-gradient(rgba(6, 11, 26, 0.55), var(--navy) 92%),
+    image-set(
+      url("assets/hero-banner.webp") type("image/webp"),
+      url("assets/hero-banner.png") type("image/png")
+    );
   background-size: cover;
   background-position: center top;
   background-repeat: no-repeat;

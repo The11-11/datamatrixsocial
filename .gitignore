@@ -10,5 +10,3 @@ webhooks/.env.local
 *.log
 .DS_Store
 Thumbs.db
-
-# compress assets/hero-neon.png to WebP before deploy (currently ~2.2 MB)

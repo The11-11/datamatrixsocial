@@ -22,7 +22,9 @@ datamatrixsocial/
 ├── styles.css           # brand palette, Montserrat/Inter, responsive nav + grids
 ├── app.js               # mobile nav toggle + scroll reveal (vanilla JS)
 ├── assets/
-│   └── hero-neon.png    # neon brand board art, hero background (~2.2 MB)
+│   ├── hero-banner.webp # hero background, banner crop (~90 KB)
+│   ├── hero-banner.png  # PNG fallback for the hero
+│   └── hero-neon.png    # full neon brand board (source, not served)
 ├── README.md            # overview + link inventory
 └── docs/
     └── system-design.md # this file
@@ -60,8 +62,9 @@ need tracking later, point it at a form endpoint instead.
 
 Any static host works (GitHub Pages, Netlify, Vercel, S3). Serve the
 repo root; the entry point is `index.html`. No environment variables,
-no secrets — every link is public. Before deploying, compress
-`assets/hero-neon.png` (export a cropped WebP of the banner portion).
+no secrets — every link is public. The hero serves
+`assets/hero-banner.webp` (top 360 px banner crop of `hero-neon.png`,
+~90 KB) with `hero-banner.png` as the fallback.
 
 ## Webhooks service (`webhooks/`)
 
