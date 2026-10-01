@@ -2,14 +2,14 @@
 # CreativeId comes from Ads Manager or the adcreatives endpoint
 # (see docs/meta-ads-runbook.md for the image-upload step).
 # Usage:
-#   powershell -File create-ad.ps1 -AdSetId '<AD_SET_ID>' -CreativeId '<CREATIVE_ID>' -Token '<ACCESS_TOKEN>'
+#   powershell -File create-ad.ps1 -AdAccountId '<AD_ACCOUNT_ID>' -AdSetId '<AD_SET_ID>' -CreativeId '<CREATIVE_ID>' -Token '<ACCESS_TOKEN>'
 param(
+  [Parameter(Mandatory)] [string]$AdAccountId,
   [Parameter(Mandatory)] [string]$AdSetId,
   [Parameter(Mandatory)] [string]$CreativeId,
   [Parameter(Mandatory)] [string]$Token,
   [string]$Name = "Datamatrix Awareness Ad",
-  [string]$ApiVersion = "v25.0",
-  [string]$AdAccountId = "<AD_ACCOUNT_ID>"
+  [string]$ApiVersion = "v25.0"
 )
 
 $creative = "{`"creative_id`": `"$CreativeId`"}"

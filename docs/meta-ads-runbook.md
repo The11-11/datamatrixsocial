@@ -32,7 +32,7 @@ Objective is `OUTCOME_AWARENESS`, status `PAUSED`. Save the campaign id.
 ## 2. Ad set
 
 ```powershell
-powershell -File create-adset.ps1 -CampaignId '<CAMPAIGN_ID>' -Token '<ACCESS_TOKEN>' -DailyBudget 1000 -Country ZA
+powershell -File create-adset.ps1 -AdAccountId '<AD_ACCOUNT_ID>' -CampaignId '<CAMPAIGN_ID>' -Token '<ACCESS_TOKEN>' -DailyBudget 1000 -Country ZA
 ```
 
 Budget is in the account currency's smallest subunit. Default geo is
@@ -41,7 +41,7 @@ South Africa (`ZA`) — override `-Country` per market. Save the ad set id.
 ## 3. Ad
 
 ```powershell
-powershell -File create-ad.ps1 -AdSetId '<AD_SET_ID>' -CreativeId '<CREATIVE_ID>' -Token '<ACCESS_TOKEN>'
+powershell -File create-ad.ps1 -AdAccountId '<AD_ACCOUNT_ID>' -AdSetId '<AD_SET_ID>' -CreativeId '<CREATIVE_ID>' -Token '<ACCESS_TOKEN>'
 ```
 
 Status `PAUSED`. Review everything in Ads Manager, and only flip to
@@ -92,5 +92,5 @@ impressions, reach, spend, clicks, CTR, CPC — override `-Preset` /
 
 - Awareness carries no link by your choice; switching to traffic later
   means a new campaign with a link-click objective, not an edit here.
-- Never commit real account IDs or tokens — all three scripts take
-  them as parameters.
+- Never commit real account IDs or tokens — all three create scripts
+  require `-AdAccountId` and `-Token` as parameters.
