@@ -23,7 +23,12 @@ npm install
 APP_SECRET=<app-secret> TOKEN=<verify-token> PORT=3000 npm start
 ```
 
-Health: `GET /` returns `[]` until notifications arrive.
+Optional env: `ADMIN_TOKEN` enables the receipts listing at `GET /`
+(send `Authorization: Bearer <ADMIN_TOKEN>`; without the variable the
+route returns 404). `DEDUPE_FILE=<path>` keeps the 36h dedupe store
+across restarts; `DEDUPE_MAX` caps it (default 10000 entries).
+
+Health: `GET /healthz` returns `{"ok":true}`.
 Automated local exercise: `powershell -File test-local.ps1` (challenge
 echo, 403s, valid/invalid signatures, duplicate delivery, receipts).
 
@@ -81,7 +86,7 @@ and check the CN equals `client.webhooks.fbclientcerts.com`
 ## 6. Test delivery
 
 1. Dashboard → Webhooks → **Test** a field → Send to My Server →
-   confirm it lands in `GET /`.
+   confirm it lands in `GET /` (with the `ADMIN_TOKEN` bearer header).
 2. Trigger a real event on the connected account; confirm 200s and
    no duplicate actions from retries.
 3. Compare payloads against Meta's webhook examples.
