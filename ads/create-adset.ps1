@@ -2,15 +2,15 @@
 # DailyBudget is in the ad account currency's smallest subunit
 # (e.g. cents, so 1000 = 10.00).
 # Usage:
-#   powershell -File create-adset.ps1 -CampaignId '<CAMPAIGN_ID>' -Token '<ACCESS_TOKEN>' -DailyBudget 1000 -Country ZA
+#   powershell -File create-adset.ps1 -AdAccountId '<AD_ACCOUNT_ID>' -CampaignId '<CAMPAIGN_ID>' -Token '<ACCESS_TOKEN>' -DailyBudget 1000 -Country ZA
 param(
+  [Parameter(Mandatory)] [string]$AdAccountId,
   [Parameter(Mandatory)] [string]$CampaignId,
   [Parameter(Mandatory)] [string]$Token,
   [Parameter(Mandatory)] [string]$DailyBudget,
   [string]$Country = "ZA",
   [string]$Name = "Datamatrix Awareness ZA",
-  [string]$ApiVersion = "v25.0",
-  [string]$AdAccountId = "<AD_ACCOUNT_ID>"
+  [string]$ApiVersion = "v25.0"
 )
 
 $targeting = "{`"geo_locations`":{`"countries`":[ `"$Country`" ]}}"
