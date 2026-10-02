@@ -10,6 +10,8 @@ step — open `index.html` or serve the folder with any static host.
 - `app.js` — mobile nav toggle, scroll reveal (vanilla JS, no dependencies)
 - `webhooks/` — Instagram Webhooks callback (Node + Express, needs Node ≥18);
   see `docs/instagram-webhooks-setup.md`
+- `socialcolabz/` — Instagram posting: draft, approve, publish (PowerShell);
+  see `docs/socialcolabz.md`
 - `ads/` — Marketing API fill-in scripts (create, pause/delete, insights);
   see `docs/meta-ads-runbook.md`
 - `.vscode/mcp.json` — Meta Social Technologies MCP wiring (OAuth, no secrets);
