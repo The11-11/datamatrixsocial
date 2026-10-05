@@ -522,3 +522,40 @@ section h2 {
     transition: none;
   }
 }
+
+/* ---------- legal pages ---------- */
+
+.site-footer a {
+  color: inherit;
+}
+
+.legal {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+  line-height: 1.65;
+}
+
+.legal h1 {
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  margin: 0 0 0.25rem;
+}
+
+.legal h2 {
+  font-size: 1.15rem;
+  margin: 2rem 0 0.5rem;
+  color: var(--cyan);
+}
+
+.legal-updated {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.legal a {
+  color: var(--cyan);
+}
+
+.legal ul {
+  padding-left: 1.2rem;
+}
