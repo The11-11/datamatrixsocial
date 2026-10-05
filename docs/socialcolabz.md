@@ -73,5 +73,10 @@ Commit the file so the repo shows what went out.
 ## Ready to go
 
 `posts/2026-10-launch-14-day-mvp.json` holds the launch post from
-`docs/instagram-launch-post.md`. Put the ad image (as JPEG) on a public
-URL, set `image_url`, then approve and publish.
+`docs/instagram-launch-post.md`. Its image is
+`assets/posts/2026-10-launch-14-day-mvp.jpg`, served from a raw GitHub
+URL pinned to the commit that added it (the repo is public), so the
+approved image can't change underneath the post. Approve, then publish.
+
+Store future post images in `assets/posts/` the same way: commit the
+JPEG, then use `https://raw.githubusercontent.com/The11-11/datamatrixsocial/<commit>/assets/posts/<file>.jpg`.
