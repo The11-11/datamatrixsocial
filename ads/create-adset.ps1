@@ -8,6 +8,8 @@ param(
   [Parameter(Mandatory)] [string]$Token,
   [Parameter(Mandatory)] [string]$DailyBudget,
   [string]$Country = "ZA",
+  # REACH for awareness; LINK_CLICKS for a traffic campaign.
+  [ValidateSet("REACH", "LINK_CLICKS")] [string]$OptimizationGoal = "REACH",
   [string]$Name = "Datamatrix Awareness ZA",
   [string]$ApiVersion = "v25.0",
   [string]$AdAccountId = "<AD_ACCOUNT_ID>"
@@ -19,6 +21,8 @@ curl.exe -s -X POST "https://graph.facebook.com/$ApiVersion/act_$AdAccountId/ads
   -F "campaign_id=$CampaignId" `
   -F "daily_budget=$DailyBudget" `
   -F "targeting=$targeting" `
+  -F "billing_event=IMPRESSIONS" `
+  -F "optimization_goal=$OptimizationGoal" `
   -F "status=PAUSED" `
   -F "access_token=$Token"
 Write-Output ""

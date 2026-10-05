@@ -1,4 +1,4 @@
-# Meta ads runbook — awareness, no link yet
+# Meta ads runbook
 
 Hierarchy: **campaign** (objective) → **ad set** (budget + targeting) →
 **ad** (creative). Build in that order; each step returns the id the
@@ -64,6 +64,23 @@ multiple ads per ad set to optimize across images, text, and
 placements. Creatives are immutable once created and live in the
 account's creative library for reuse.
 
+## Apply Now ads (link to the applicant portal)
+
+To send people to the applicant portal
+(https://datamatrix-applicants.tcasepac24.chatgpt.site), run a traffic
+campaign with a link creative instead of awareness:
+
+```powershell
+powershell -File create-campaign.ps1 -AdAccountId '<AD_ACCOUNT_ID>' -Token '<ACCESS_TOKEN>' -Objective OUTCOME_TRAFFIC -Name 'Datamatrix Apply Now'
+powershell -File create-adset.ps1 -CampaignId '<CAMPAIGN_ID>' -Token '<ACCESS_TOKEN>' -DailyBudget 1000 -Country ZA -OptimizationGoal LINK_CLICKS -AdAccountId '<AD_ACCOUNT_ID>'
+powershell -File create-creative.ps1 -AdAccountId '<AD_ACCOUNT_ID>' -PageId '<PAGE_ID>' -ImageHash '<IMAGE_HASH>' -InstagramUserId '<IG_USER_ID>' -Token '<ACCESS_TOKEN>'
+powershell -File create-ad.ps1 -AdSetId '<AD_SET_ID>' -CreativeId '<CREATIVE_ID>' -Token '<ACCESS_TOKEN>' -AdAccountId '<AD_ACCOUNT_ID>'
+```
+
+The creative carries an **Apply now** button to the portal. Override
+`-Link`, `-Headline` or `-Message` as needed. `-InstagramUserId` is the
+id of @datamatrix_applications; leave it off to run on Facebook only.
+
 ## 4. Manage
 
 Pause (or enable, your call — default is pause):
@@ -90,7 +107,7 @@ impressions, reach, spend, clicks, CTR, CPC — override `-Preset` /
 
 ## Notes
 
-- Awareness carries no link by your choice; switching to traffic later
-  means a new campaign with a link-click objective, not an edit here.
-- Never commit real account IDs or tokens — all three scripts take
+- Awareness ads carry no link. Link ads need the traffic campaign above;
+  an existing awareness campaign can't be switched over.
+- Never commit real account IDs or tokens — all the scripts take
   them as parameters.
