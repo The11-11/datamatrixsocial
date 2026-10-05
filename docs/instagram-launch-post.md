@@ -33,9 +33,8 @@ Apply for a project slot → hello@datamatrix.io | www.datamatrix.io
 3. Paste the caption above, tag @datamatrix_applications if reposting
    elsewhere, share.
 
-## Automated posting (later)
+## Automated posting
 
-Posting via API needs all of: Instagram business/creator account linked
-to a Facebook Page, a Meta developer app with `instagram_content_publish`
-permission, and a long-lived access token. With those in place the post
-call is one Graph API request and can be scripted from PowerShell.
+SocialColabz publishes this post from
+`socialcolabz/posts/2026-10-launch-14-day-mvp.json` once the image is a
+public JPEG and you approve it. Setup and steps: `docs/socialcolabz.md`.
